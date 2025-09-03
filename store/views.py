@@ -25,12 +25,15 @@ def store(request, category_slug=None):   #view function to display all products
 
 def product_detail(request, category_slug, product_name):   #view function to display product details based on category slug and product name
     try:
+        
         single_product = Product.objects.get(category__slug=category_slug, slug=product_name)  #fetching the product object based on category slug and product name, 
+        single_product.out_of_stock = single_product.stock <= 0
         #here category is the foreign key in Product model and we are using double underscore to access the slug field of category model
     except Exception as e:
         raise e
     context = {
         'single_product':single_product,
+        'single_product.out_of_stock':single_product.out_of_stock,
     }
     return render(request,'store/product_detail.html',context)
 
