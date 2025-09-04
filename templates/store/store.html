@@ -25,7 +25,7 @@
 				<h6 class="title">Categories</h6>
 			</a>
 		</header>
-		<div class="filter-content collapse show" id="collapse_1" style="">
+		<div class="filter-content collapse show" id="collapse_1" >
 			<div class="card-body">
 				<a href="{% url 'store' %}">All Products</a>
 				<ul class="list-menu">
@@ -44,7 +44,7 @@
 				<h6 class="title">Sizes </h6>
 			</a>
 		</header>
-		<div class="filter-content collapse show" id="collapse_4" style="">
+		<div class="filter-content collapse show" id="collapse_4" >
 			<div class="card-body">
 			  <label class="checkbox-btn">
 			    <input type="checkbox">
@@ -76,33 +76,33 @@
 				<h6 class="title">Price range </h6>
 			</a>
 		</header>
-		<div class="filter-content collapse show" id="collapse_3" style="">
+		<div class="filter-content collapse show" id="collapse_3" >
 			<div class="card-body">
 				
 				<div class="form-row">
 				<div class="form-group col-md-6">
 				  <label>Min</label>
-				  <!-- <input class="form-control" placeholder="$0" type="number"> -->
+				  <!-- <input class="form-control" placeholder="₹0" type="number"> -->
 				  	<select class="mr-2 form-control">
-						<option value="0">$0</option>
-						<option value="50">$50</option>
-						<option value="100">$100</option>
-						<option value="150">$150</option>
-						<option value="200">$200</option>
-						<option value="500">$500</option>
-						<option value="1000">$1000</option>
+						<option value="0">₹0</option>
+						<option value="50">₹50</option>
+						<option value="100">₹100</option>
+						<option value="150">₹150</option>
+						<option value="200">₹200</option>
+						<option value="500">₹500</option>
+						<option value="1000">₹1000</option>
 					</select>
 				</div>
 				<div class="form-group text-right col-md-6">
 				  <label>Max</label>
 				  	<select class="mr-2 form-control">
-						<option value="50">$50</option>
-						<option value="100">$100</option>
-						<option value="150">$150</option>
-						<option value="200">$200</option>
-						<option value="500">$500</option>
-						<option value="1000">$1000</option>
-						<option value="2000">$2000+</option>
+						<option value="50">₹50</option>
+						<option value="100">₹100</option>
+						<option value="150">₹150</option>
+						<option value="200">₹200</option>
+						<option value="500">₹500</option>
+						<option value="1000">₹1000</option>
+						<option value="2000">₹2000+</option>
 					</select>
 				</div>
 				</div> <!-- form-row.// -->
@@ -136,10 +136,10 @@
 				<div class="fix-height">
 					<a href="{{ product.get_url }}" class="title">{{ product.product_name}}</a>
 					<div class="price-wrap mt-2">
-						<span class="price">$ {{ product.price}}</span>
+						<span class="price">₹ {{ product.price}}</span>
 					</div> <!-- price-wrap.// -->
 				</div>
-				<a href="#" class="btn btn-block btn-primary"> Add to cart </a>
+				<a href="{% url 'add_cart' product.id  %}" class="btn btn-block btn-primary"> Add to cart </a>
 			</figcaption>
 		</figure>
 	</div> <!-- col.// -->
